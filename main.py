@@ -34,7 +34,7 @@ for phrase in phrases:
             end_time = subtitle["end"]
             duration = end_time - start_time
 
-    output_file = f'{phrase}.gif'  # Example output file name
+    output_file = './created_gifs/{phrase}.gif'  # Example output file name
     sub_list = [{'start': 0, 'end': duration, 'text': phrase}]
 
     create_gif('video.mp4', sub_list, start_time, duration, output_file)
