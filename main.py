@@ -20,21 +20,23 @@ for text in subtitles:
 input_string = input("Enter a list of indexes separated by spaces: ")
 
 input_list = list(map(int, input_string.split()))
+print(input_list)
 
 for selection in input_list:
     phrases.append(subtitles[selection]['text'])
 
+print(phrases)
 
 for phrase in phrases:
 
     for subtitle in subtitles:
         if phrase in subtitle["text"]:
-            print(subtitle["text"])
-            start_time = subtitle["start"]
-            end_time = subtitle["end"]
+            print(subtitle['text'])
+            start_time = subtitle['start']
+            end_time = subtitle['end']
             duration = end_time - start_time
 
-    output_file = './created_gifs/{phrase}.gif'  # Example output file name
+    output_file = f'./created_gifs/{phrase.replace(" ", "").replace("?", "").replace(".", "")}.gif'  # Example output file name
     sub_list = [{'start': 0, 'end': duration, 'text': phrase}]
 
     create_gif('video.mp4', sub_list, start_time, duration, output_file)
