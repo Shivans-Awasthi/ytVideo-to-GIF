@@ -11,11 +11,12 @@ Youtube video segments to gif conversion with subtitle using audio transcript wi
 5. Run the main.py file
 
 A list of phrases are displayed 
+
 ![phrase list](/images/phraselist.jpg)
 
 The user is prompted to select the phrases with its index
 
-![phrase list](/images/phraselist.jpg)
+![phrase list](/images/selection.jpg)
 
 
 Corresponding GIFs are created and saved in the creared_gifs directory
