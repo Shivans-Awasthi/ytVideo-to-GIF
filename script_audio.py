@@ -1,24 +1,6 @@
-# from youtube_transcript_api import YouTubeTranscriptApi
-#
-#
-# # Example function to get transcript from YouTube video
-# def transcribe_youtube_video(video_id):
-#     try:
-#         transcript = YouTubeTranscriptApi.get_transcript(video_id)
-#         full_text = ' '.join([line['text'] for line in transcript])
-#         return full_text
-#     except Exception as e:
-#         print(f"Error fetching transcript: {str(e)}")
-#         return None
-#
-#
-# # Replace 'VIDEO_ID' with the actual ID of the YouTube video
-# video_id = 'fLeJJPxua3E'
-# transcription = transcribe_youtube_video(video_id)
-# # print(transcription)
 import whisper
 
-model = whisper.load_model("medium")
+model = whisper.load_model("base")
 result = model.transcribe("audio.wav", word_timestamps=True)
 transcription = result
 print("Transcript created")
@@ -35,6 +17,11 @@ def create_subtitle_file(text):
             "end" : segment["end"],
             "text": segment["text"]
         })
+        # with open('subtitles.txt', 'w', encoding='utf-8') as f:
+        #         f.write(str(subtitles) + '\n')
+        
     return subtitles
+
+# create_subtitle_file(transcription)
 
 

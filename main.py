@@ -6,17 +6,24 @@ from script_audio import create_subtitle_file
 import os
 
 
-phrases = [
-    
-    "I don't care how much money you make.",
-    "your success is dependent upon how you use the 24.",
-    "You only get 24 hours in a day."
-]
 
-subtitles = create_subtitle_file(transcription)
+phrases = []  #list to store all user selected phrases from the transcript
+
+subtitles = create_subtitle_file(transcription)   
+i=-1 
 
 for text in subtitles:
-    print(text['text'])
+    i = i + 1
+    print( str(i) + text['text'])
+
+
+input_string = input("Enter a list of indexes separated by spaces: ")
+
+input_list = list(map(int, input_string.split()))
+
+for selection in input_list:
+    phrases.append(subtitles[selection]['text'])
+
 
 for phrase in phrases:
 
