@@ -19,4 +19,4 @@ The user is prompted to select the phrases with its index
 ![phrase list](/images/selection.jpg)
 
 
-Corresponding GIFs are created and saved in the creared_gifs directory
+Corresponding GIFs are created and saved in the created_gifs directory
